@@ -1,7 +1,7 @@
 import math
 import random
-from analytics import average_nearest_neighbor_distance
-from point import Point
+from .analytics import average_nearest_neighbor_distance
+from .point import Point
 
 def generate_random_points(n):
     """
