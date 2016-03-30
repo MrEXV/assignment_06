@@ -6,6 +6,8 @@ from .. import analytics
 from .. import io_geojson
 from .. import utils
 
+
+
 class TestFunctionalPointPattern(unittest.TestCase):
 
     def setUp(self):

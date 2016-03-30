@@ -1,5 +1,5 @@
 import math
-import utils
+
 from point import Point
 
 def mean_center(points):
@@ -32,6 +32,26 @@ def mean_center(points):
 
     return x, y
 
+def euclidean_distance(a, b):
+    """
+    Compute the Euclidean distance between two points
+
+    Parameters
+    ----------
+    a : tuple
+        A point in the form (x,y)
+
+    b : tuple
+        A point in the form (x,y)
+
+    Returns
+    -------
+
+    distance : float
+               The Euclidean distance between the two points
+    """
+    distance = math.sqrt((a[0] - b[0])**2 + (a[1] - b[1])**2)
+    return distance
 
 def average_nearest_neighbor_distance(points,mark=None):
     """
@@ -68,7 +88,7 @@ def average_nearest_neighbor_distance(points,mark=None):
             if i==j:
                 continue
             else:
-                distance.append(utils.euclidean_distance((points_tmp[i].x,points_tmp[i].y),(points_tmp[j].x,points_tmp[j].y)))
+                distance.append(euclidean_distance((points_tmp[i].x,points_tmp[i].y),(points_tmp[j].x,points_tmp[j].y)))
         nearest_distances.append(min(distance))
 
     mean_d=float(sum(nearest_distances)/len(nearest_distances))
